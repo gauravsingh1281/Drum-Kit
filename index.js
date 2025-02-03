@@ -1,14 +1,13 @@
-let numberOfDrumButtons = document.querySelectorAll(".drum").length;
-let audio = new Audio("./sounds/tom-1.mp3");
+let drumButtons = document.querySelectorAll(".drum");
 
 //For button clicked
-for (let i = 0; i < numberOfDrumButtons; i++) {
-  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+drumButtons.forEach((element) => {
+  element.addEventListener("click", function () {
     let btnClicked = this.textContent;
     makeSound(btnClicked);
     buttonAnimation(btnClicked);
   });
-}
+});
 
 //For key press on keyboard
 document.addEventListener("keydown", (e) => {
